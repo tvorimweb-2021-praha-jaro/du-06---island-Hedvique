@@ -20,6 +20,7 @@ body {
 
 main {
     margin-left: 0;
+    background-color: whitesmoke;
 }
 
 
@@ -52,7 +53,6 @@ header {
     padding: 0 3rem;
 }
 
-
 /* MENU */
 
 .polozka-menu {
@@ -61,7 +61,7 @@ header {
     color: rgb(149, 163, 163);
 }
 
-.menu {
+nav {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@ header {
     align-items: center;
 }
 
-ul li {
+nav li {
     padding: 0.4rem 0;
     font-size: 0.9rem;
     display: inline;
@@ -104,6 +104,14 @@ h2::after {
     text-align: center;
 }
 
+.obrazek {
+    width: 100%;
+}
+
+figure {
+    margin: auto 0;
+}
+
 /* FOTOGALERIE */
 
 .foto-popis {
@@ -125,6 +133,10 @@ a {
     font-weight: normal;
 }
 
+.fotografie {
+    width: 100%;
+}
+
 
 /* PATICKA */
  footer {
@@ -139,18 +151,33 @@ a {
         min-height: 400px;
     } 
     
-     .menu {
+     nav {
          flex-direction: row;
          justify-content: space-around;
      }
 
-     .menu li:hover {
+     nav li {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        padding: 2rem 1rem;
+        align-self: stretch;
+        
+    
+    }nav li:hover {
         background-color: #54535e;
         color: white;
     }
 
-    .menu li {
-        align-self: stretch;
+    .uvod,
+    .proc,
+    .co-videt,
+    .zbytek {
+        padding: 0 1.5rem;
+    }
+
+    h2 {
+        margin-top: 0;
     }
 
     .fotovtextu {
@@ -165,6 +192,7 @@ a {
         color: white;
         opacity: 0.9;
         align-self: flex-end;
+        justify-content: stretch;
     }
 
     .popisek a,
@@ -204,49 +232,61 @@ a {
 
  @media screen and (min-width: 1000px) {
     header {
-         padding: 2.5rem 18rem;
-         position: relative;
+         padding: 4.5rem 22rem 7rem 22rem;
             }
+
+    .titulek {
+        font-size: 4.5rem;
+    }
     
     main {
         display: flex;
         flex-direction: column;
-        padding-top: 50px;
+        padding-top: 1.7rem;
         box-shadow: 0px 10px 27px -12px rgba(0, 0, 0, .5);
         max-width: 960px;
         margin: auto;
-        margin-top: -2rem;
+        margin-top: -4rem;
+        position: relative;
+        z-index: 1;
         }
 
     .sekce-zacatek {
         display: flex;
         }
     
-    .menu {
+    nav {
         flex-direction: column;
         width: 40%;
         justify-content: start;
         align-items: start;
         }
-    
+    nav li {
+        flex-grow: 0;
+        justify-content: flex-start;
+        padding: 0.5rem 0;
+    }
+
     .polozka-menu {
         padding-left: 40px;
         }
     
     .uvod {
         width: 800px;
+        padding: 0 1.5rem 2rem 0;
         }
 
     .proc {
-        padding-right: 170px;
+        padding: 0 12rem 2rem 3rem;
         }
 
     .co-videt,
     .zbytek {
-        padding-left: 170px;
+        padding: 0 3rem 2rem 12rem;
     }
 
     .foto-popis {
         flex-basis: 33%;
+        flex-grow: 1;
         }
     }
